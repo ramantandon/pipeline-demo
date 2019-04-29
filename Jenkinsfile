@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    kubernetes {
+      label 'maven'
+    }
+
+  }
   stages {
     stage('Buzz Build') {
       steps {
