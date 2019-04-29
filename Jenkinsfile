@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'docker.io/ramantandon/jnlp-slave_with_mvn:0.1'
-      args '${computer.jnlpmac} ${computer.name}'
-    }
-
-  }
+  agent any
   stages {
     stage('Buzz Build') {
       steps {
+        sh 'sleep 180'
         sh './jenkins/build.sh'
       }
     }
