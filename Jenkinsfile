@@ -1,6 +1,10 @@
 pipeline {
   agent {
-    label 'maven'
+    docker {
+      image 'docker.io/ramantandon/jnlp-slave_with_mvn:0.1'
+      args '${computer.jnlpmac} ${computer.name}'
+    }
+
   }
   stages {
     stage('Buzz Build') {
