@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh 'sleep 180'
+        sh 'sleep 10'
         sh './jenkins/build.sh'
       }
     }
